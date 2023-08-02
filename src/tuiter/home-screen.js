@@ -1,10 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import WhatsHappening from "./whats-happening";
+import TuitList from "./tuits/tuit-list";
 
-function HomeScreen() {
-    return (
-    <div className="col-6">
-        <h2>HomeScreen</h2>
-        </div>
-    );
-    }
-export default HomeScreen
+const HomeScreen = () => {
+ return(
+   <>
+     <h4>Home</h4>
+     <WhatsHappening/>
+     <TuitList/>
+   </>
+ );
+};
+export default HomeScreen;

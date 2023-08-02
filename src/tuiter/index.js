@@ -9,13 +9,21 @@ import NotificationScreen from "./notifications.js";
 import ListScreen from "./list-screen";
 import MessagesScreen from "./messages-screen"
 import MoreScreen from "./more-screen";
-import WhoToFollowListItem
-  from "./who-to-follow-list/who-to-follow-list-item";
+import WhoToFollowListItem from "./who-to-follow-list/who-to-follow-list-item";
 import TuitSummaryList from "./tuit-summary-list";
 import ExploreScreen from "./explore-screen";
+import whoReducer from "./reducers/who-reducer";
+import tuitsReducer from "./reducers/tuit-reducer";
+import { configureStore } from '@reduxjs/toolkit';
+import {Provider} from "react-redux";
+const store = configureStore(
+  {reducer: {who: whoReducer, tuits: tuitsReducer}});
+
+
 
 function Tuiter() {
     return(
+      <Provider store={store}>
     <div>
       <Nav/>
       <div className="container text-center"></div>
@@ -25,7 +33,7 @@ function Tuiter() {
         </div> 
         <div className="col-8"> 
         <Routes>
-          <Route path="/home" element={<h2>Home</h2>} /> 
+          <Route path="/home" element={<HomeScreen/>} /> 
           <Route path="/explore" element={<ExploreScreen/>} />
           <Route path="/bookmarks" element={<h1>Bookmarks</h1>} /> 
           <Route path="/profile" element={<h1>Profile</h1>} /> 
@@ -49,6 +57,7 @@ function Tuiter() {
             </div>
         </div>
         </div>
+        </Provider>
 
     );
  }

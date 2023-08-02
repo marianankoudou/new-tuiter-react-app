@@ -11,6 +11,7 @@ const TuitSummaryItem = (
      "image": "java.png"
    }
  }
+ 
 ) => {
  return(
   <ul class="list-group">
