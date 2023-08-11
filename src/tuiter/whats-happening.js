@@ -1,4 +1,4 @@
-import {createTuit} from "./reducers/tuit-reducer";
+import {createTuitThunk} from "./services/tuits-thunks";
 import {useDispatch} from "react-redux";
 import {AiFillPicture} from "react-icons/ai";
 import {HiOutlineGif} from "react-icons/hi2";
@@ -18,7 +18,7 @@ const WhatsHappening = () => {
     const newTuit = {
         tuit: whatsHappening
     }
-      dispatch(createTuit(newTuit));
+      dispatch(createTuitThunk(newTuit));
       setWhatsHappening("");
  }
  return (

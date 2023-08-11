@@ -1,5 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+
 
 <head>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script> 
@@ -7,7 +9,9 @@ import { Link, useLocation } from "react-router-dom";
     <script type="text/JavaScript"></script>
 </head>
 
-const NavigationSidebar = () => {
+function Navigation() {
+   const { currentUser } = useSelector((state) => state.user);
+
  const { pathname } = useLocation();
  const [ignore, tuiter, active] = pathname.split("/");
  const links = ["home","explore",  "notifications", "messages", "bookmarks", "lists", "profile",  "more"];
@@ -50,4 +54,6 @@ const NavigationSidebar = () => {
 </div>
 );
 };
-export default NavigationSidebar;
+
+
+export default Navigation;

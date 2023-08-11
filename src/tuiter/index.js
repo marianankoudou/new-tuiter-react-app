@@ -15,11 +15,18 @@ import ExploreScreen from "./explore-screen";
 import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuit-reducer";
 import { configureStore } from '@reduxjs/toolkit';
+import authReducer from "./reducers/auth-reducer";
+
+
+
+
 import {Provider} from "react-redux";
-const store = configureStore(
-  {reducer: {who: whoReducer, tuits: tuitsReducer}});
-
-
+const store = configureStore({
+  reducer: {
+   who: whoReducer,
+   tuits: tuitsReducer,
+   user:  authReducer
+  }});
 
 function Tuiter() {
     return(
