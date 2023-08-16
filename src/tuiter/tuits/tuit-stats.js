@@ -10,7 +10,7 @@ import { useDispatch } from "react-redux";
 
 
 const TuitStats =  ( 
-    tuit = {liked: false, likes: 0, retuits: 0, replies: 0, tuit: "" }) => {
+    tuit ) => {
 const dispatch = useDispatch();
 return (
     <div key={tuit._id} 

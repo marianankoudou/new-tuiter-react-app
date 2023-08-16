@@ -4,7 +4,6 @@ import Nav from "../nav";
 import NavigationSidebar from "./navigation-sidebar";
 import HomeScreen from "./home-screen";
 import BookmarksScreen from "./bookmarks-screen";
-import ProfileScreen from "./profile-screen";
 import NotificationScreen from "./notifications.js";
 import ListScreen from "./list-screen";
 import MessagesScreen from "./messages-screen"
@@ -15,8 +14,10 @@ import ExploreScreen from "./explore-screen";
 import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuit-reducer";
 import { configureStore } from '@reduxjs/toolkit';
+import ProfileScreen from "./user/profile-screen";
+import LoginScreen from "./user/login-screen";
+import RegisterScreen from "./user/register-screen";
 import authReducer from "./reducers/auth-reducer";
-
 
 
 
@@ -40,10 +41,12 @@ function Tuiter() {
         </div> 
         <div className="col-8"> 
         <Routes>
+        <Route path="/login"  element={<LoginScreen/>} />
+           <Route path="/register" element={<RegisterScreen/>} />
           <Route path="/home" element={<HomeScreen/>} /> 
           <Route path="/explore" element={<ExploreScreen/>} />
           <Route path="/bookmarks" element={<h1>Bookmarks</h1>} /> 
-          <Route path="/profile" element={<h1>Profile</h1>} /> 
+          <Route path="/profile"  element={<ProfileScreen/>} /> 
           <Route path="/notifications" element={<h1>Notification</h1>} /> 
           <Route path="/messages-screen" element={<h1>Messages</h1>} /> 
           <Route path="/list-screen" element={<h1>List</h1>} /> 

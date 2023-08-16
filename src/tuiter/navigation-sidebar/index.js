@@ -50,10 +50,15 @@ function Navigation() {
           <Link to={"/tuiter/more "} className={`list-group-item
              ${active === "more" ? "active" : ""}`}>More</Link>
           </div>
+          <div>
+          {!currentUser && <Link className="list-group" to="/tuiter/login">   Login   </Link>}
+          {!currentUser && <Link className="list-group" to="/tuiter/register">Register</Link>}
+          {currentUser && <Link className="list-group" to="/tuiter/profile"> Profile </Link>}
+
+          </div>
 </div>
 </div>
 );
 };
-
 
 export default Navigation;
