@@ -4,7 +4,6 @@ import Nav from "../nav";
 import NavigationSidebar from "./navigation-sidebar";
 import HomeScreen from "./home-screen";
 import BookmarksScreen from "./bookmarks-screen";
-import ProfileScreen from "./profile-screen";
 import NotificationScreen from "./notifications.js";
 import ListScreen from "./list-screen";
 import MessagesScreen from "./messages-screen"
@@ -16,7 +15,9 @@ import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuit-reducer";
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from "./reducers/auth-reducer";
-
+import ProfileScreen from "./user/profile-screen";
+import LoginScreen from "./user/login-screen";
+import RegisterScreen from "./user/register-screen";
 
 
 
@@ -48,6 +49,9 @@ function Tuiter() {
           <Route path="/messages-screen" element={<h1>Messages</h1>} /> 
           <Route path="/list-screen" element={<h1>List</h1>} /> 
           <Route path="/more-screen" element={<h1>More</h1>} /> 
+          <Route path="/login"    element={<LoginScreen    />} />
+          <Route path="/register" element={<RegisterScreen />} />
+          <Route path="/profile"  element={<ProfileScreen  />} />
         </Routes>
         </div>
             <div className="col-2">

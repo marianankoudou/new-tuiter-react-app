@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
 
+
 <head>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script> 
     <script src="https://kit.fontawesome.com/d1249e2875.js" crossorigin="anonymous"></script>
@@ -50,6 +51,10 @@ function Navigation() {
           <Link to={"/tuiter/more "} className={`list-group-item
              ${active === "more" ? "active" : ""}`}>More</Link>
           </div>
+          {!currentUser && <Link className="list-group" to="/tuiter/login">   Login   </Link>}
+          {!currentUser && <Link className="list-group" to="/tuiter/register">Register</Link>}
+          {!currentUser && <Link className="list-group" to="/tuiter/profile"> Profile </Link>}
+
 </div>
 </div>
 );

@@ -8,7 +8,6 @@ export const loginThunk = createAsyncThunk(
    return user;
  }
 );
-
 export const profileThunk = createAsyncThunk(
     "auth/profile", async () => {
     const response = authService.profile();
@@ -24,3 +23,9 @@ export const profileThunk = createAsyncThunk(
       return user;
    });
    
+   export const registrationThunk = createAsyncThunk(
+    "user/register", async () => {
+      const response = authService.register();
+      return response.data
+    }
+   )
