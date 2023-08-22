@@ -24,8 +24,8 @@ export const profileThunk = createAsyncThunk(
    });
    
    export const registrationThunk = createAsyncThunk(
-    "user/register", async () => {
-      const response = authService.register();
+    "user/register", async (credentials) => {
+      const response = authService.register(credentials);
       return response.data
     }
    )
